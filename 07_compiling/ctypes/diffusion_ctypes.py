@@ -52,4 +52,4 @@ def run_experiment(num_iterations):
 
 if __name__ == "__main__":
     t = run_experiment(500)
-    print t
+    print(t)

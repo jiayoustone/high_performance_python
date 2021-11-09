@@ -23,7 +23,7 @@ def calculate_z_serial_purepython(maxiter, zs, cs, output):
     #print("zs has type:", numba.typeof(zs))
     #print("cs has type:", numba.typeof(cs))
     #print("output has type:", numba.typeof(output))
-    for i in xrange(len(zs)):
+    for i in range(len(zs)):
         n = 0
         z = zs[i]
         c = cs[i]

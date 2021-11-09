@@ -32,16 +32,16 @@ def calc_pure_python(desired_width, max_iterations):
             zs.append(complex(xcoord, ycoord))
             cs.append(complex(c_real, c_imag))
 
-    print "Length of x:", len(x)
-    print "Total elements:", len(zs)
+    print("Length of x:", len(x))
+    print("Total elements:", len(zs))
     start_time = time.time()
     output = calculate.calculate_z(max_iterations, zs, cs)
     end_time = time.time()
     secs = end_time - start_time
-    print "Took", secs, "seconds"
+    print("Took", secs, "seconds")
 
     validation_sum = sum(output)
-    print "Total sum of elements (for validation):", validation_sum
+    print("Total sum of elements (for validation):", validation_sum)
 
 
 # Calculate the Julia set using a pure Python solution with

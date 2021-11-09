@@ -28,6 +28,7 @@ def random_name():
     last_name = "".join(random.sample(string.ascii_letters, 8))
     return "{} {}".format(first_name, last_name)
 
+
 if __name__ == "__main__":
     phonebook = [
         ("John Doe", "555-555-5555"),
@@ -37,14 +38,14 @@ if __name__ == "__main__":
         ("Elaine Bodian", "301-555-5555"),
     ]
 
-    print "Number of unique names from set method:", set_unique_names(phonebook)
-    print "Number of unique names from list method:", list_unique_names(phonebook)
+    print("Number of unique names from set method:", set_unique_names(phonebook))
+    print("Number of unique names from list method:", list_unique_names(phonebook))
 
     setup = "from __main__ import (large_phonebook, set_unique_names, list_unique_names)"
     iterations = 50
     large_phonebook = [
         (random_name(), "555-555-5555")
-        for i in xrange(1000)
+        for i in range(10000)
     ]
 
     t = timeit.timeit(
@@ -52,13 +53,13 @@ if __name__ == "__main__":
         setup=setup,
         number=iterations
     )
-    print "Finding unique names in a phonebook of length {} using lists " \
-        "took: {:2e} seconds".format(len(large_phonebook), t / iterations)
+    print("Finding unique names in a phonebook of length {} using lists " \
+          "took: {:2e} seconds".format(len(large_phonebook), t / iterations))
 
     t = timeit.timeit(
         stmt="set_unique_names(large_phonebook)",
         setup=setup,
         number=iterations
     )
-    print "Finding unique names in a phonebook of length {} using sets " \
-        "took:  {:2e} seconds".format(len(large_phonebook), t / iterations)
+    print("Finding unique names in a phonebook of length {} using sets " \
+          "took:  {:2e} seconds".format(len(large_phonebook), t / iterations))

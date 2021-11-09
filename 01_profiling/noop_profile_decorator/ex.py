@@ -31,5 +31,5 @@ class TestCase(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    print "do some work:", some_fn(2)
+    print("do some work:", some_fn(2))
     # unittest.main()

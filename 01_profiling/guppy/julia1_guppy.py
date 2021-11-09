@@ -38,10 +38,10 @@ def calc_pure_python(draw_output, desired_width, max_iterations):
 
     from guppy import hpy
     hp = hpy()
-    print "heapy after creating y and x lists of floats"
+    print("heapy after creating y and x lists of floats")
     h = hp.heap()
-    print h
-    print
+    print(h)
+    print()
 
     # set width and height to the generated pixel counts, rather than the
     # pre-rounding desired width and height
@@ -56,24 +56,24 @@ def calc_pure_python(draw_output, desired_width, max_iterations):
             zs.append(complex(xcoord, ycoord))
             cs.append(complex(c_real, c_imag))
 
-    print "heapy after creating zs and cs using complex numbers"
+    print("heapy after creating zs and cs using complex numbers")
     h = hp.heap()
-    print h
-    print
+    print(h)
+    print()
 
-    print "Length of x:", len(x)
-    print "Total elements:", len(zs)
+    print("Length of x:", len(x))
+    print("Total elements:", len(zs))
     start_time = time.time()
     output = calculate_z_serial_purepython(max_iterations, zs, cs)
     end_time = time.time()
     secs = end_time - start_time
-    print calculate_z_serial_purepython.func_name + " took", secs, "seconds"
+    print(calculate_z_serial_purepython.__name__ + " took", secs, "seconds")
 
-    print
-    print "heapy after calling calculate_z_serial_purepython"
+    print()
+    print("heapy after calling calculate_z_serial_purepython")
     h = hp.heap()
-    print h
-    print
+    print(h)
+    print()
 
     # this sum is expected for 1000^2 grid with 300 iterations
     assert sum(output) == 33219980

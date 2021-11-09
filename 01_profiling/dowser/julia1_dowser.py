@@ -6,14 +6,16 @@ x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
 c_real, c_imag = -0.62772, -.42193
 
 
-def launch_memory_usage_server(port=8080):
+def launch_memory_usage_server(port=8686):
     import cherrypy
     import dowser
 
     cherrypy.tree.mount(dowser.Root())
     cherrypy.config.update({
         'environment': 'embedded',
-        'server.socket_port': port
+        'server.socket_port': port,
+        'log.error_file': 'cy.error.log',
+        'log.screen': True
     })
 
     cherrypy.engine.start()
@@ -64,18 +66,18 @@ def calc_pure_python(draw_output, desired_width, max_iterations):
 
     launch_memory_usage_server()
 
-    print "Length of x:", len(x)
-    print "Total elements:", len(zs)
+    print("Length of x:", len(x))
+    print("Total elements:", len(zs))
     start_time = time.time()
     output = calculate_z_serial_purepython(max_iterations, zs, cs)
     end_time = time.time()
     secs = end_time - start_time
-    print calculate_z_serial_purepython.func_name + " took", secs, "seconds"
+    print(calculate_z_serial_purepython.__name__ + " took", secs, "seconds")
 
     # this sum is expected for 1000^2 grid with 300 iterations
     assert sum(output) == 33219980
 
-    print "now waiting..."
+    print("now waiting...")
     while True:
         time.sleep(1)
 

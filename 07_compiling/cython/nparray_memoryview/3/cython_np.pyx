@@ -13,7 +13,7 @@ def calculate_z(int maxiter, double complex[:] zs, double complex[:] cs):
             z = zs[i]
             c = cs[i]
             output[i] = 0
-            while output[i] < maxiter and (z.real * z.real + z.imag * z.imag) < 4:
+            while output[i] < maxiter and and abs(z) < 2:
                 z = z * z + c
                 output[i] += 1
     return output

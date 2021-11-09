@@ -37,8 +37,8 @@ goodtime = timeit.repeat(
     number=1000000,
 )
 
-print "Min lookup time for baddict: ", min(badtime)
-print "Min lookup time for gooddict: ", min(goodtime)
+print("Min lookup time for baddict: ", min(badtime))
+print("Min lookup time for gooddict: ", min(goodtime))
 
 # Results:
 #   Min lookup time for baddict:  16.3375990391

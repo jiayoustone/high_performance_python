@@ -5,7 +5,7 @@ import time
 
 grid_shape = (512, 512)
 
-
+@profile
 def laplacian(grid, out):
     np.copyto(out, grid)
     out *= -4
@@ -14,7 +14,7 @@ def laplacian(grid, out):
     out += np.roll(grid, +1, 1)
     out += np.roll(grid, -1, 1)
 
-
+@profile
 def evolve(grid, dt, out, D=1):
     laplacian(grid, out)
     out *= D * dt

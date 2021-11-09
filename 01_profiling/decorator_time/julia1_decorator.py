@@ -13,9 +13,10 @@ def timefn(fn):
         t1 = time.time()
         result = fn(*args, **kwargs)
         t2 = time.time()
-        print (
-            "@timefn:" + fn.func_name + " took " + str(t2 - t1) + " seconds")
+        print(
+            f"@timefn:{fn.__name__} took " + str(t2 - t1) + " seconds")
         return result
+
     return measure_time
 
 
@@ -59,19 +60,20 @@ def calc_pure_python(draw_output, desired_width, max_iterations):
             zs.append(complex(xcoord, ycoord))
             cs.append(complex(c_real, c_imag))
 
-    print "Length of x:", len(x)
-    print "Total elements:", len(zs)
+    print("Length of x:", len(x))
+    print("Total elements:", len(zs))
     start_time = time.time()
     output = calculate_z_serial_purepython(max_iterations, zs, cs)
     end_time = time.time()
     secs = end_time - start_time
-    print calculate_z_serial_purepython.func_name + " took", secs, "seconds"
+    print("calculate_z_serial_purepython  took", secs, "seconds")
 
     # this sum is expected for 1000^2 grid with 300 iterations
     assert sum(output) == 33219980
 
 
-# Calculate the Julia set using a pure Python solution with
-# reasonable defaults for a laptop
-# set draw_output to True to use PIL to draw an image
-calc_pure_python(draw_output=False, desired_width=1000, max_iterations=300)
+if __name__ == "__main__":
+    # Calculate the Julia set using a pure Python solution with
+    # reasonable defaults for a laptop
+    # set draw_output to True to use PIL to draw an image
+    calc_pure_python(draw_output=False, desired_width=1000, max_iterations=300)

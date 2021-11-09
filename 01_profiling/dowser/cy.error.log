@@ -1,0 +1,43 @@
+[20/Oct/2021:21:01:07] ENGINE Bus STOPPING
+[20/Oct/2021:21:01:07] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8686)) shut down
+[20/Oct/2021:21:01:07] ENGINE Bus STOPPED
+[20/Oct/2021:21:01:07] ENGINE Bus EXITING
+[20/Oct/2021:21:01:07] ENGINE Bus EXITED
+[20/Oct/2021:21:01:09] ENGINE Bus STARTING
+[20/Oct/2021:21:01:09] ENGINE Serving on http://127.0.0.1:8686
+[20/Oct/2021:21:01:09] ENGINE Bus STARTED
+[20/Oct/2021:21:01:17] HTTP 
+Traceback (most recent call last):
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/_cprequest.py", line 638, in respond
+    self._do_respond(path_info)
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/_cprequest.py", line 697, in _do_respond
+    response.body = self.handler()
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/lib/encoding.py", line 223, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/_cpdispatch.py", line 54, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/dowser/dowser.py", line 141, in index
+    return template("graphs.html", output="\n".join(rows))
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/dowser/dowser.py", line 68, in template
+    return open(os.path.join(localDir, name)).read() % p
+FileNotFoundError: [Errno 2] No such file or directory: '/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/dowser/graphs.html'
+[20/Oct/2021:21:01:19] HTTP 
+Traceback (most recent call last):
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/_cprequest.py", line 638, in respond
+    self._do_respond(path_info)
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/_cprequest.py", line 697, in _do_respond
+    response.body = self.handler()
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/lib/encoding.py", line 223, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/cherrypy/_cpdispatch.py", line 54, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/dowser/dowser.py", line 141, in index
+    return template("graphs.html", output="\n".join(rows))
+  File "/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/dowser/dowser.py", line 68, in template
+    return open(os.path.join(localDir, name)).read() % p
+FileNotFoundError: [Errno 2] No such file or directory: '/home/demon/workspace/high_performance_python/venv/lib/python3.8/site-packages/dowser/graphs.html'
+[20/Oct/2021:21:06:59] ENGINE Bus STOPPING
+[20/Oct/2021:21:06:59] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8686)) shut down
+[20/Oct/2021:21:06:59] ENGINE Bus STOPPED
+[20/Oct/2021:21:06:59] ENGINE Bus EXITING
+[20/Oct/2021:21:06:59] ENGINE Bus EXITED

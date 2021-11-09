@@ -5,7 +5,7 @@ import time
 
 grid_size = (512,)
 
-
+@profile
 def laplacian(grid, out):
     np.copyto(out, grid)
     np.multiply(out, -2.0, out)
@@ -13,6 +13,7 @@ def laplacian(grid, out):
     np.add(out, np.roll(grid, -1), out)
 
 
+@profile
 def evolve(grid, dt, out, D=1):
     laplacian(grid, out)
     np.multiply(out, D * dt, out)
